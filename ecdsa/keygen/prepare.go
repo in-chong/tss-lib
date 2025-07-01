@@ -26,7 +26,7 @@ const (
 	safePrimeBitLen = 1024
 	// Ticker for printing log statements while generating primes/modulus
 	logProgressTickInterval = 8 * time.Second
-	// Safe big len using random for ssid
+	// Safe big len using random for ssid test
 	SafeBitLen = 1024
 )
 
