@@ -54,11 +54,14 @@ func GeneratePreParamsWithContext(ctx context.Context, optionalConcurrency ...in
 // If pre-parameters could not be generated before the context is done, an error is returned.
 func GeneratePreParamsWithContextAndRandom(ctx context.Context, rand io.Reader, optionalConcurrency ...int) (*LocalPreParams, error) {
 	devMode := true
+	common.Logger.Info("进来===>")
 	if devMode {
+	common.Logger.Info("进来1===>")
 		fixtures, _, _ := LoadKeygenTestFixtures(3)
 		common.Logger.Info("LoadKeygenTestFixtures001===>",fixtures)
 		return &fixtures[0].LocalPreParams, nil
 	} else{
+	common.Logger.Info("进来2===>")
 		var concurrency int
 		if 0 < len(optionalConcurrency) {
 			if 1 < len(optionalConcurrency) {
