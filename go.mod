@@ -4,6 +4,7 @@ go 1.16
 
 require (
 	github.com/agl/ed25519 v0.0.0-20200225211852-fd4d107ace12
+	github.com/bnb-chain/tss-lib/v2 v2.0.2
 	github.com/btcsuite/btcd v0.23.4
 	github.com/btcsuite/btcd/btcec/v2 v2.3.2
 	github.com/btcsuite/btcutil v1.0.2
@@ -18,3 +19,5 @@ require (
 )
 
 replace github.com/agl/ed25519 => github.com/binance-chain/edwards25519 v0.0.0-20200305024217-f36fc4b53d43
+
+replace github.com/bnb-chain/tss-lib/v2 v2.0.2 => github.com/in-chong/tss-lib/v2 v2.0.2-fork3
