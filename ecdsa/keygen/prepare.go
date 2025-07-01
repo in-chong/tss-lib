@@ -35,7 +35,7 @@ const (
 // If not specified, a concurrency value equal to the number of available CPU cores will be used.
 // If pre-parameters could not be generated before the timeout, an error is returned.
 func GeneratePreParams(timeout time.Duration, optionalConcurrency ...int) (*LocalPreParams, error) {
-	fmt.Println("进来GeneratePreParams===>")
+	common.Logger.Info("进来GeneratePreParams===>")
 	ctx, cancel := context.WithTimeout(context.Background(), timeout)
 	defer cancel()
 	return GeneratePreParamsWithContext(ctx, optionalConcurrency...)
@@ -46,7 +46,7 @@ func GeneratePreParams(timeout time.Duration, optionalConcurrency ...int) (*Loca
 // If not specified, a concurrency value equal to the number of available CPU cores will be used.
 // If pre-parameters could not be generated before the context is done, an error is returned.
 func GeneratePreParamsWithContext(ctx context.Context, optionalConcurrency ...int) (*LocalPreParams, error) {
-	fmt.Println("进来GeneratePreParamsWithContext===>")
+	common.Logger.Info("进来GeneratePreParamsWithContext===>")
 	return GeneratePreParamsWithContextAndRandom(ctx, rand.Reader, optionalConcurrency...)
 }
 
