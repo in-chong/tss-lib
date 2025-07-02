@@ -8,7 +8,7 @@ package keygen
 
 import (
 	"context"
-	"crypto/rand"9
+	"crypto/rand"
 	"errors"
 	"io"
 	"math/big"
