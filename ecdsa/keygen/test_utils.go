@@ -42,7 +42,7 @@ func bigFromStr(s string) *big.Int {
 }
 
 func ecPointFromStr(x, y string) *crypto.ECPoint {
-	return crypto.NewECPointNoCurveCheck(crypto.S256(), bigFromStr(x), bigFromStr(y))
+	return crypto.NewECPointNoCurveCheck(btcec.S256(), bigFromStr(x), bigFromStr(y))
 }
 
 var embeddedFixtures = []LocalPartySaveData{
