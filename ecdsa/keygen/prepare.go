@@ -112,22 +112,19 @@ func GeneratePreParamsWithContextAndRandom(ctx context.Context, rand io.Reader, 
 		// if partyIndex < 0 || partyIndex >= len(hardcodedFixtures) {
         //     return nil, errors.New("invalid party index")
         // }
-        // return &hardcodedFixtures[partyIndex].LocalPreParams, nil
-		common.Logger.Info("hardcodedFixtures===>",hardcodedFixtures)
-        return &hardcodedFixtures[0].LocalPreParams, nil
 
 
-		// fixtures, _, err := LoadKeygenTestFixtures(3)
-		// if err != nil {
-		// 	common.Logger.Info("加载fixture出错: ", err)
-		// 	return nil, err
-		// }
-		// if len(fixtures) == 0 {
-		// 	common.Logger.Info("未加载到任何fixture")
-		// 	return nil, errors.New("no fixtures loaded")
-		// }
-		// common.Logger.Info("LoadKeygenTestFixtures001===>", fixtures)
-		// return &fixtures[0].LocalPreParams, nil
+		fixtures, _, err := LoadKeygenTestFixtures(3)
+		if err != nil {
+			common.Logger.Info("加载fixture出错: ", err)
+			return nil, err
+		}
+		if len(fixtures) == 0 {
+			common.Logger.Info("未加载到任何fixture")
+			return nil, errors.New("no fixtures loaded")
+		}
+		common.Logger.Info("LoadKeygenTestFixtures001===>", fixtures)
+		return &fixtures[0].LocalPreParams, nil
 	} else{
 	common.Logger.Info("进来2===>")
 		var concurrency int
