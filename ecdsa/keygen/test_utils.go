@@ -22,6 +22,7 @@ import (
 	"github.com/bnb-chain/tss-lib/v2/tss"
 	"github.com/bnb-chain/tss-lib/v2/crypto"
 	"github.com/bnb-chain/tss-lib/v2/crypto/paillier"
+	"github.com/btcsuite/btcd/btcec/v2"
 )
 
 const (
@@ -387,7 +388,7 @@ var embeddedFixtures = []LocalPartySaveData{
 func LoadKeygenTestFixtures(qty int, optionalStart ...int) ([]LocalPartySaveData, tss.SortedPartyIDs, error) {
 	devMode := true
 	if devMode {
-		common.Logger.Info('进入LoadKeygenTestFixtures===>devMode')
+		fmt.Println("进入LoadKeygenTestFixtures===>devMode")
 		keys := make([]LocalPartySaveData, 0, qty)
 		start := 0
 		if 0 < len(optionalStart) {
@@ -410,9 +411,9 @@ func LoadKeygenTestFixtures(qty int, optionalStart ...int) ([]LocalPartySaveData
 			partyIDs[i] = tss.NewPartyID(pMoniker, pMoniker, key.ShareID)
 		}
 		sortedPIDs := tss.SortPartyIDs(partyIDs)
-		common.Logger.Info('keys===>',keys)
-		common.Logger.Info('sortedPIDs===>',sortedPIDs)
-		common.Logger.Info('nil===>',nil)
+		fmt.Println("keys===>",keys)
+		fmt.Println("sortedPIDs===>",sortedPIDs)
+		fmt.Println("nil===>",nil)
 		return keys, sortedPIDs, nil
 	}else{
 		keys := make([]LocalPartySaveData, 0, qty)
