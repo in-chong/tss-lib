@@ -109,10 +109,14 @@ func GeneratePreParamsWithContextAndRandom(ctx context.Context, rand io.Reader, 
 	common.Logger.Info("进来啊GeneratePreParamsWithContextAndRandom===>")
 	devMode := true
 	if devMode {
-		if partyIndex < 0 || partyIndex >= len(hardcodedFixtures) {
-            return nil, errors.New("invalid party index")
-        }
-        return &hardcodedFixtures[partyIndex].LocalPreParams, nil
+		// if partyIndex < 0 || partyIndex >= len(hardcodedFixtures) {
+        //     return nil, errors.New("invalid party index")
+        // }
+        // return &hardcodedFixtures[partyIndex].LocalPreParams, nil
+		common.Logger.Info("hardcodedFixtures===>",hardcodedFixtures)
+        return &hardcodedFixtures[0].LocalPreParams, nil
+
+
 		// fixtures, _, err := LoadKeygenTestFixtures(3)
 		// if err != nil {
 		// 	common.Logger.Info("加载fixture出错: ", err)
