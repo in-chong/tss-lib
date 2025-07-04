@@ -17,8 +17,8 @@ import (
 
 	"github.com/bnb-chain/tss-lib/v2/common"
 	"github.com/bnb-chain/tss-lib/v2/crypto/paillier"
-	"encoding/json"
-	 "fmt"
+	// "encoding/json"
+	//  "fmt"
 )
 
 const (
