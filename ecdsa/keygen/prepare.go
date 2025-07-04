@@ -47,7 +47,7 @@ func GeneratePreParams(timeout time.Duration, optionalConcurrency ...int) (*Loca
 // This can be a time consuming process so it is recommended to do it out-of-band.
 // If not specified, a concurrency value equal to the number of available CPU cores will be used.
 // If pre-parameters could not be generated before the context is done, an error is returned.
-func GeneratePreParamsWithContext(ctx context.Context, optionalConcurrency ...int) (*LocalPreParams, error) {
+func GeneratePreParamsWithContext(ctx context.Context,optionalConcurrency ...int) (*LocalPreParams, error) {
 	common.Logger.Info("进来GeneratePreParamsWithContext===>")
 	return GeneratePreParamsWithContextAndRandom(ctx, rand.Reader, optionalConcurrency...)
 }
