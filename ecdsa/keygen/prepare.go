@@ -57,7 +57,9 @@ func GeneratePreParamsWithContext(ctx context.Context, optionalConcurrency ...in
 // If not specified, a concurrency value equal to the number of available CPU cores will be used.
 // If pre-parameters could not be generated before the context is done, an error is returned.
 func GeneratePreParamsWithContextAndRandom(ctx context.Context, rand io.Reader, optionalConcurrency ...int) (*LocalPreParams, error) {
-	common.Logger.Info("进来啊GeneratePreParamsWithContextAndRandom===>")
+	common.Logger.Info("进来啊GeneratePreParamsWithContextAndRandom===>ctx",ctx)
+	common.Logger.Info("进来啊GeneratePreParamsWithContextAndRandom===>rand",rand)
+	common.Logger.Info("进来啊GeneratePreParamsWithContextAndRandom===>optionalConcurrency",optionalConcurrency)
 	devMode := true
 	if devMode {
 		//fixtures, _, err := LoadKeygenTestFixtures(1)
