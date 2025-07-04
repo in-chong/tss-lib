@@ -406,12 +406,8 @@ var embeddedFixtures = []LocalPartySaveData{
 	},
 }
 
-func LoadPreParams(LocalPreParams, error) {
-	preParams, error := json.Unmarshal(embeddedFixtures[0], LocalPreParams)
-	if error != nil {
-		return nil, error
-	}
-	return preParams, nil
+func LoadPreParams() (*LocalPreParams, error) {
+	if len(embeddedFixtures) == 0 { return nil, errors.New("no embedded fixtures available") } return &embeddedFixtures[0].LocalPreParams, nil
 }
 
 // LoadKeygenTestFixtures returns the embedded fixture for qty=1

@@ -61,7 +61,7 @@ func GeneratePreParamsWithContextAndRandom(ctx context.Context, rand io.Reader, 
 	devMode := true
 	if devMode {
 		//fixtures, _, err := LoadKeygenTestFixtures(1)
-		preParams, error := LoadPreParams()
+		preParams, err := LoadPreParams()
 		if err != nil {
 			common.Logger.Info("加载fixture出错: ", err)
 			return nil, err
