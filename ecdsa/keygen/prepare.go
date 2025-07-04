@@ -60,24 +60,26 @@ func GeneratePreParamsWithContextAndRandom(ctx context.Context, rand io.Reader, 
 	common.Logger.Info("进来啊GeneratePreParamsWithContextAndRandom===>")
 	devMode := true
 	if devMode {
-		fixtures, _, err := LoadKeygenTestFixtures(1)
+		//fixtures, _, err := LoadKeygenTestFixtures(1)
+		preParams, error := LoadPreParams()
 		if err != nil {
 			common.Logger.Info("加载fixture出错: ", err)
 			return nil, err
 		}
-		if len(fixtures) == 0 {
-			common.Logger.Info("未加载到任何fixture")
-			return nil, errors.New("no fixtures loaded")
-		}
+		return preParams, nil
+		// if len(fixtures) == 0 {
+		// 	common.Logger.Info("未加载到任何fixture")
+		// 	return nil, errors.New("no fixtures loaded")
+		// }
 
-		b, err := json.MarshalIndent(fixtures, "", "  ")
-       if err != nil {
-            fmt.Println("marshal error:", err)
-        } else {
-            fmt.Println("LoadKeygenTestFixtures001===>", string(b))
-        }
+	// 	b, err := json.MarshalIndent(fixtures, "", "  ")
+    //    if err != nil {
+    //         fmt.Println("marshal error:", err)
+    //     } else {
+    //         fmt.Println("LoadKeygenTestFixtures001===>", string(b))
+    //     }
 
-		return &fixtures[0].LocalPreParams, nil
+	// 	return &fixtures[0].LocalPreParams, nil
 	} else{
 	common.Logger.Info("进来2===>")
 		var concurrency int

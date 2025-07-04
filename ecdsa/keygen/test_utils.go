@@ -406,6 +406,14 @@ var embeddedFixtures = []LocalPartySaveData{
 	},
 }
 
+func LoadPreParams(LocalPreParams, error) {
+	preParams, error := json.unmarshal(embeddedFixtures[0], LocalPreParams)
+	if error != nil {
+		return nil, error
+	}
+	return preParams, nil
+}
+
 // LoadKeygenTestFixtures returns the embedded fixture for qty=1
 func LoadKeygenTestFixtures(qty int, optionalStart ...int) ([]LocalPartySaveData, tss.SortedPartyIDs, error) {
 	devMode := true
