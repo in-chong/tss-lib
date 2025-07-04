@@ -407,7 +407,7 @@ var embeddedFixtures = []LocalPartySaveData{
 }
 
 func LoadPreParams(LocalPreParams, error) {
-	preParams, error := json.unmarshal(embeddedFixtures[0], LocalPreParams)
+	preParams, error := json.Unmarshal(embeddedFixtures[0], LocalPreParams)
 	if error != nil {
 		return nil, error
 	}
